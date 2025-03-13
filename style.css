@@ -7,27 +7,97 @@
 
 body {
     background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px; /* Espacio para móviles */
 }
 
+
 body::before {
-    background-image: url("imagen/code.png");
+    background-image: url("img/code.png");
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; /* Asegura que el fondo se ajuste bien */
+    background-position: right;
     content: "";
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0.4;
-    z-index: -1; /* Evita que cubra el contenido */
+}
+
+.container {
+    width: 1200px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 24px;
+    border: 1px solid #1875E8;
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    background-image: url("img/Ruido.png");
+    background-size: 100% 100%;
+    position: relative;
+}
+
+
+.container__contenido {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.container__informaciones {
+    flex: 1;
+    padding: 3rem;
+}
+
+.container__boton {
+    border-radius: 16px;
+    background: #1875E8;
+    padding: 16px 24px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    margin-top: 2rem;
+}
+
+.container__boton:disabled {
+    background: #898989;
+}
+
+.container__texto {
+    margin: 16px 0 16px 0;
+}
+
+.container__texto-azul {
+    color: #1875E8;
+}
+
+.container__input {
+    width: 100%;
+    height: 72px;
+    border-radius: 16px;
+    background-color: #FFF;
+    border: none;
+    color: #1875E8;
+    padding: 2rem;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.container__botones {
+    display: flex;
+    gap: 2em;
+}
+
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 72px;
+    padding-bottom: 3rem;
 }
 
 p,
@@ -35,130 +105,7 @@ button {
     font-family: 'Inter', sans-serif;
 }
 
-/* Contenedor Principal */
-.container {
-    width: 90%; /* Se ajusta en pantallas pequeñas */
-    max-width: 1200px;
-    height: auto; /* Se ajusta al contenido */
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se acomoden mejor */
-    align-items: center;
-    justify-content: center;
-    border-radius: 24px;
-    border: 1px solid #1875E8;
-    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
-    background-image: url("imagen/Ruido.png");
-    background-size: cover;
-    padding: 20px;
-    gap: 20px; /* Espacio entre elementos */
-}
-
-/* Contenedor del contenido */
-.container__contenido {
-    display: flex;
-    flex-direction: column; /* Asegura buena estructura en móviles */
-    align-items: center;
-    text-align: center;
-    width: 100%;
-}
-
-/* Estilo del Texto */
-h1 {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 6vw; /* Se adapta al tamaño de pantalla */
-    padding-bottom: 2rem;
-}
-
-/* Texto de párrafo */
 .texto__parrafo {
-    font-size: 1.5rem;
+    font-size: 32px;
     font-weight: 400;
-    margin-bottom: 1rem;
-}
-
-/* Contenedor de la imagen */
-.container__imagen-persona {
-    width: 100%;
-    max-width: 400px; /* Tamaño máximo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-/* Imagen */
-.container__imagen-persona img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* Input */
-.container__input {
-    width: 100%;
-    max-width: 300px;
-    height: 50px;
-    border-radius: 16px;
-    background-color: #FFF;
-    border: none;
-    color: #1875E8;
-    padding: 1rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-}
-
-/* Botón */
-.container__boton {
-    border-radius: 16px;
-    background: #1875E8;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: 700;
-    border: none;
-    margin-top: 1rem;
-    width: 100%;
-    max-width: 200px;
-}
-
-.container__boton:disabled {
-    background: #898989;
-}
-
-/* Botones en fila */
-.container__botones {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    flex-wrap: wrap; /* Permite que se ajusten en pantallas pequeñas */
-    justify-content: center;
-    width: 100%;
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 8vw;
-    }
-
-    .container {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
-    .container__input {
-        max-width: 90%;
-        font-size: 1rem;
-    }
-
-    .container__boton {
-        font-size: 0.9rem;
-        padding: 10px;
-    }
-
-    .container__imagen-persona {
-        max-width: 80%;
-    }
 }
